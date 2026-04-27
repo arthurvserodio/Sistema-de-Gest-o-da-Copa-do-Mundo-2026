@@ -40,8 +40,7 @@ public class ControllerMenu {
     }
     @FXML
     //Gustavo ta fazendo, depois adiciona o trocaTela + fxml
-    private void irParaEstadios(MouseEvent e) {
-        System.out.println("Página Estádios ainda não pronta");
+    private void irParaEstadios(MouseEvent e) { trocarTela(e, "tela1.fxml");
     }
     @FXML
     //Helena ta fazendo, depois adiciona o trocaTela + fxml
