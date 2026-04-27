@@ -1,0 +1,37 @@
+.logo_copa26_arredondado{
+    -fx-background-color: #000000;
+    -fx-background-radius: 25;
+}
+.white_button{
+    -fx-background-color: transparent;
+    -fx-border-color: white;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10 25 10 25;
+}
+.black_button{
+    -fx-background-color: transparent;
+    -fx-border-color: black;
+    -fx-border-radius: 30;
+    -fx-background-radius: 30;
+    -fx-text-fill: black;
+    -fx-font-size: 16px;
+    -fx-padding: 10 25 10 25;
+}
+.white{
+    -fx-background-color: #fefefe;
+}
+.letra-grupo {
+    -fx-background-color: #ba7e02;
+    -fx-background-radius: 30 0 30 0;
+    -fx-padding: 8 14 8 14;
+}
+.card-group_stage{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-color: #d9d9d9;
+    -fx-border-width: 1;
+}
