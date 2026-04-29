@@ -48,6 +48,6 @@ public class ControllerMenu {
     @FXML
     //Helena ta fazendo, depois adiciona o trocaTela + fxml
     private void irParaLogin(ActionEvent e) {
-        System.out.println("Página Login ainda não pronta");
+        trocarTela(e, "/designAndScreens/login/login.fxml");
     }
 }

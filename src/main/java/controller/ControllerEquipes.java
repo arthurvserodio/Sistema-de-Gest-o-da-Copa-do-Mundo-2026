@@ -54,12 +54,12 @@ public class ControllerEquipes {
     @FXML
     //Gustavo ta fazendo, depois adiciona o trocaTela + fxml
     private void irParaEstadios(MouseEvent e) {
-        System.out.println("Página Estádios ainda não pronta");
+        trocarTela(e, "/designAndScreens/telaEstadios/tela1.fxml");
     }
     @FXML
     //Helena ta fazendo, depois adiciona o trocaTela + fxml
     private void irParaLogin(ActionEvent e) {
-        System.out.println("Página Login ainda não pronta");
+        trocarTela(e, "/designAndScreens/login/login.fxml");
     }
     @FXML
     private void avancar(ActionEvent e) {

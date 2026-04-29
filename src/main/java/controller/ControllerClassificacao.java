@@ -49,11 +49,10 @@ public class ControllerClassificacao {
     @FXML
     //Gustavo ta fazendo, depois adiciona o trocaTela + fxml
     private void irParaEstadios(MouseEvent e) {
-        System.out.println("Página Estádios ainda não pronta");
+        trocarTela(e, "/designAndScreens/telaEstadios/tela1.fxml");
     }
     @FXML
     //Helena ta fazendo, depois adiciona o trocaTela + fxml
-    private void irParaLogin(ActionEvent e) {
-        System.out.println("Página Login ainda não pronta");
+    private void irParaLogin(ActionEvent e) {trocarTela(e, "/designAndScreens/login/login.fxml");
     }
 }
