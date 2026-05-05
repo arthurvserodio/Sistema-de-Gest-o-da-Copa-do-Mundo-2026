@@ -73,31 +73,18 @@ public class ControllerLogin {
             return;
         }
 
-        // TODO: substitua pela sua lógica real de autenticação
-        // Exemplo estático para teste:
+        //exemplo
         if (usuario.equals("admin") && senha.equals("1234")) {
             mostrarSucesso("Login realizado com sucesso!");
-            // Aqui você pode trocar de cena:
-            // trocarCena("/com/seuapp/home.fxml");
+
         } else {
             mostrarErro("Usuário ou senha inválidos.");
         }
     }
 
-    // -------------------------------------------------------
-    // Chamado ao clicar em "Realizar Cadastro"
-    // -------------------------------------------------------
-    @FXML
-    private void handleCadastro() {
-        // TODO: abrir tela de cadastro
-        // Exemplo:
-        // trocarCena("/com/seuapp/cadastro.fxml");
-        mostrarSucesso("Redirecionando para o cadastro...");
-    }
 
-    // -------------------------------------------------------
-    // Helpers de feedback visual
-    // -------------------------------------------------------
+
+
     private void mostrarErro(String mensagem) {
         labelMensagem.setStyle("-fx-font-size: 13px; -fx-text-fill: #cc0000;");
         labelMensagem.setText(mensagem);
@@ -108,20 +95,5 @@ public class ControllerLogin {
         labelMensagem.setText(mensagem);
     }
 
-    // -------------------------------------------------------
-    // Utilitário para troca de cena (descomente se precisar)
-    // -------------------------------------------------------
-    /*
-    private void trocarCena(String fxmlPath) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPath));
-            Parent root = loader.load();
-            Stage stage = (Stage) botaoEntrar.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    */
+
 }

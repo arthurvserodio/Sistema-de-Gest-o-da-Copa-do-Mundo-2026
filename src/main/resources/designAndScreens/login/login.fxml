@@ -55,11 +55,7 @@
                     <!-- Botão Entrar -->
                     <Button fx:id="botaoEntrar" onAction="#handleEntrar" prefHeight="48.0" prefWidth="408.0" style="-fx-background-color: #1a1a1a;                                    -fx-background-radius: 30;                                    -fx-text-fill: white;                                    -fx-font-size: 16px;                                    -fx-font-family: 'Oswald Medium';                                    -fx-cursor: hand;" stylesheets="@../../css/style.css" text="Entrar" />
 
-                    <!-- Separador -->
-                    <Label style="-fx-font-size: 13px; -fx-text-fill: #888888;" text="Não tem uma conta?" />
 
-                    <!-- Botão Cadastro -->
-                    <Button fx:id="botaoCadastro" onAction="#handleCadastro" prefHeight="48.0" prefWidth="408.0" style="-fx-cursor: hand;" styleClass="black_button" stylesheets="@../../css/style.css" text="Realizar Cadastro" />
 
                 </VBox>
             </StackPane>
