@@ -1,0 +1,59 @@
+.table-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #0d0d0d;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+/* Cabeçalho (Fundo e Labels) */
+.table-view .column-header-background {
+    -fx-background-color: #0d0d0d;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 45;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-family: "Oswald";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
+
+/* Linhas da tabela */
+.table-row-cell {
+    -fx-background-color: white;
+    -fx-cell-size: 40;
+}
+
+/* Cor de seleção: Azul bem transparente */
+.table-row-cell:filled:selected {
+    -fx-background-color: rgba(0, 89, 255, 0.2); /* Azul com 20% de opacidade */
+}
+
+/* Cor do texto quando selecionado (ajustado para manter visível no azul claro) */
+.table-row-cell:filled:selected .table-cell {
+    -fx-text-fill: #0059ff;
+    -fx-font-weight: bold;
+}
+
+/* Alinhamento dos dados nas células */
+.table-cell {
+    -fx-text-fill: #333333;
+    -fx-alignment: CENTER;
+}
+
+/* Estilo para os campos de texto (TextField) */
+.text-field {
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-border-color: #cccccc;
+}
+
+.text-field:focused {
+    -fx-border-color: #0059ff;
+    -fx-border-width: 2;
+}
