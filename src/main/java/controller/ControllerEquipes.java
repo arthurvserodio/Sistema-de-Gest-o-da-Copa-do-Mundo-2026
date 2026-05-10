@@ -47,6 +47,12 @@ public class ControllerEquipes {
     private void irParaLogin(ActionEvent e) {
         SceneController.mudaDeTela( "/designAndScreens/login/login.fxml");
     }
+
+    @FXML
+    private void irParaJogadores(MouseEvent e){
+        SceneController.mudaDeTela("/designAndScreens/telaJogadores/jogadoresUSA.fxml");
+    }
+
     @FXML
     private void avancar(ActionEvent e) {
         //A pagina(flag) tem que ficar dentro das posições de memória do vetor,logo não poderá ultrapassar seu tamanho-1

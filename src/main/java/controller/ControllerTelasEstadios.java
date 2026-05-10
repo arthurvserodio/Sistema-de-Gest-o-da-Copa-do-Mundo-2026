@@ -51,7 +51,6 @@ public class ControllerTelasEstadios {
 
     }
 
-
     @FXML
     private void irParaTela1(ActionEvent e) {
         SceneController.mudaDeTela( "/designAndScreens/telaEstadios/tela1.fxml");
