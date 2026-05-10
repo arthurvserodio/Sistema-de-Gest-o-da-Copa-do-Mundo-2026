@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.Group?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.ControllerTelaPrincipalAdministrador"
+            prefHeight="400.0" prefWidth="600.0">
+    <children>
+        <Group>
+            <children>
+                <ImageView fitHeight="810.0" fitWidth="1440.0" pickOnBounds="true">
+                    <image>
+                        <Image url="@../../images/ChatGPT%20Image%2020%20de%20abr.%20de%202026,%2007_50_05.png" />
+                    </image>
+                </ImageView>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" height="100.0" stroke="#ffffff6d" strokeType="INSIDE" width="1710.0" />
+                <StackPane layoutX="91.0" layoutY="59.0" prefHeight="150.0" prefWidth="125.0" styleClass="logo_copa26_arredondado" stylesheets="@../../css/style.css">
+                    <children>
+                        <ImageView fitHeight="122.0" fitWidth="115.0" onMouseClicked="#irPaginaInicial" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/copa.jpg" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+                <Text fill="WHITE" layoutX="272.0" layoutY="64.0" onMouseClicked="#irParaHistoria" strokeType="OUTSIDE" strokeWidth="0.0" text="História" textAlignment="CENTER">
+                    <font>
+                        <Font name="Oswald Medium" size="30.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="437.0" layoutY="64.0" onMouseClicked="#irParaEquipes" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipes" textAlignment="CENTER">
+                    <font>
+                        <Font name="Oswald Medium" size="30.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="602.0" layoutY="64.0" onMouseClicked="#irParaClassificacao" strokeType="OUTSIDE" strokeWidth="0.0" text="Classificação" textAlignment="CENTER">
+                    <font>
+                        <Font name="Oswald Medium" size="30.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="807.0" layoutY="64.0" onMouseClicked="#irParaEstadios" strokeType="OUTSIDE" strokeWidth="0.0" text="Estádios" textAlignment="CENTER">
+                    <font>
+                        <Font name="Oswald Medium" size="30.0" />
+                    </font>
+                </Text>
+                <Text fill="WHITE" layoutX="970.0" layoutY="64.0" onMouseClicked="#irParaUsuarios" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuários" textAlignment="CENTER">
+                    <font>
+                        <Font name="Oswald Medium" size="30.0" />
+                    </font>
+                </Text>
+                <Button layoutX="1567.0" layoutY="27.0" mnemonicParsing="false" onAction="#irParaLogin" styleClass="white_button" stylesheets="@../../css/style.css" text="Login">
+                    <font>
+                        <Font name="Oswald Medium" size="12.0" />
+                    </font>
+                </Button>
+            </children>
+        </Group>
+
+
+    </children>
+</AnchorPane>

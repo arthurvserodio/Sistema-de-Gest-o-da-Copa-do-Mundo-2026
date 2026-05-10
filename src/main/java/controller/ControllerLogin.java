@@ -13,6 +13,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.*;
+
 public class ControllerLogin {
     //Volta para a pagina inicial de menu clicando no logo da copa
     @FXML
@@ -73,13 +75,41 @@ public class ControllerLogin {
             return;
         }
 
-        //exemplo
-        if (usuario.equals("admin") && senha.equals("1234")) {
-            mostrarSucesso("Login realizado com sucesso!");
+        //tentando achar o usuario digitado no arquivo:
 
-        } else {
-            mostrarErro("Usuário ou senha inválidos.");
+        try (
+                InputStream is = getClass().getResourceAsStream("/database/usuarios.csv");
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is))
+        ) {
+            String linha;
+            boolean find=false;
+            String funcao="ARBITRO";
+            while ((linha = reader.readLine()) != null) {
+                String[] colunas = linha.split(",");
+                if(usuario.equals(colunas[0]) && senha.equals(colunas[3])){
+                    find=true;
+                    funcao=colunas[1];
+                    break;
+                }
+            }
+            if(find){
+                mostrarSucesso("Login realizado com sucesso!");
+                if(funcao.equals("ADMINISTRADOR")){
+                    SceneController.mudaDeTela( "/designAndScreens/telasAdministrador/telaPrincipalAdministrador.fxml");
+                }
+                else{
+                    SceneController.mudaDeTela( "/designAndScreens/telaInicial/paginaInicial.fxml");
+                }
+            }
+            else{
+                mostrarErro("Usuário ou senha inválidos.");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
+
     }
 
 
