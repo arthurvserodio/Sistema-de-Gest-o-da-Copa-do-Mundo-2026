@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerJogadores">
+   <children>
+      <ImageView fitHeight="810.0" fitWidth="1500.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/Fundo_jogadores.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="220.0" layoutY="231.0" prefHeight="96.0" prefWidth="345.0" text="LISTA DE" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Demi" size="83.0" />
+         </font>
+      </Label>
+      <Label layoutX="220.0" layoutY="303.0" text="JOGADORES" textFill="WHITE">
+         <font>
+            <Font name="Franklin Gothic Demi" size="83.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="90.0" fitWidth="180.0" layoutX="45.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/american-flag-with-folds-creases.jpg" />
+         </image>
+      </ImageView>
+      <TableView layoutX="858.0" layoutY="251.0" prefHeight="200.0" prefWidth="398.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Jogador" />
+          <TableColumn prefWidth="75.0" text="Posição" />
+            <TableColumn prefWidth="75.0" text="Idade" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
