@@ -16,7 +16,7 @@ public class ControllerTelasEstadios {
     @FXML private TableView<Estadio> tabelaEstadios;
     @FXML private TableColumn<Estadio, String> colNome;
     @FXML private TableColumn<Estadio, String> colCapacidade;
-    @FXML private TableColumn<Estadio, String> colLocal;
+    @FXML private TableColumn<Estadio, Integer> colLocal;
 
 // Metodo para pegar valores das classes e mandar para o java fx:
     public void initialize() {

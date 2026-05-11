@@ -3,10 +3,10 @@ package stadium;
 
 public class Estadio {
     private String nome;
-    private String capacidade;
+    private int capacidade;
     private String local;
 
-    public Estadio(String nome, String capacidade, String local) {
+    public Estadio(String nome, int  capacidade, String local) {
         this.nome = nome;
         this.capacidade = capacidade;
         this.local = local;
@@ -16,7 +16,7 @@ public class Estadio {
         this.nome = nome;
     }
 
-    public void setCapacidade(String capacidade) {
+    public void setCapacidade(int capacidade) {
         this.capacidade = capacidade;
     }
 
@@ -25,6 +25,6 @@ public class Estadio {
     }
 
     public String getNome() { return nome; }
-    public String getCapacidade() { return capacidade; }
+    public int getCapacidade() { return capacidade; }
     public String getLocal() { return local; }
 }
