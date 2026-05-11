@@ -4,63 +4,136 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+
 public class ControllerEquipes {
-    //Logica para pular as paginas das equipes presentes na copa, como são muitos fxml, foi usado um vetor com o caminho destes,para não ser necessario o uso de muitos ifs
-    private static int pagina=0;
-    private String[] listaFxml=new String[] {"/designAndScreens/telaInicial/equipesNaCopa.fxml","/designAndScreens/telaInicial/equipesNaCopa2.fxml","/designAndScreens/telaInicial/equipesNaCopa3.fxml","/designAndScreens/telaInicial/equipesNaCopa4.fxml"
-            ,"/designAndScreens/telaInicial/equipesNaCopa5.fxml","/designAndScreens/telaInicial/equipesNaCopa6.fxml","/designAndScreens/telaInicial/equipesNaCopa7.fxml","/designAndScreens/telaInicial/equipesNaCopa8.fxml","/designAndScreens/telaInicial/equipesNaCopa9.fxml"
-            ,"/designAndScreens/telaInicial/equipesNaCopa10.fxml","/designAndScreens/telaInicial/equipesNaCopa11.fxml","/designAndScreens/telaInicial/equipesNaCopa12.fxml"};
-    //Volta para a pagina inicial de menu clicando no logo da copa
+    private List<Selecao> ListSelecoes = new ArrayList<>();
+
     @FXML
-    private void irPaginaInicial(MouseEvent e){
-        SceneController.mudaDeTela("/designAndScreens/telaInicial/paginaInicial.fxml");
+    public void initialize() {
+        carregaSelecao();
+        mostraSelecao();
     }
-    //Passa do Menu para a página que conta a historia da copa
+
     @FXML
-    private void irParaHistoria(MouseEvent e){
+    private void irPaginaInicial(MouseEvent e) {
+        SceneController.mudaDeTela("/designAndScreens/telaInicial/paginaInicial.fxml");
+    } //Passa do Menu para a página que conta a historia da copa
+
+    @FXML
+    private void irParaHistoria(MouseEvent e) {
         SceneController.mudaDeTela("/designAndScreens/telaInicial/historia.fxml");
     }
-    @FXML
-    //Passa do Menu para a tela de equipes presentes na copa de 2026
+
+    @FXML //Passa do Menu para a tela de equipes presentes na copa de 2026
     private void irParaEquipes(MouseEvent e) {
-        pagina=0;
-        SceneController.mudaDeTela( "/designAndScreens/telaInicial/equipesNaCopa.fxml");
+        SceneController.mudaDeTela("/designAndScreens/telaInicial/equipesNaCopa.fxml");
     }
-    @FXML
-    //Passa do Menu para a tela de grupos da copa 2026
+
+    @FXML //Passa do Menu para a tela de grupos da copa 2026
     private void irParaClassificacao(MouseEvent e) {
-        SceneController.mudaDeTela( "/designAndScreens/telaInicial/classificacao.fxml");
+        SceneController.mudaDeTela("/designAndScreens/telaInicial/classificacao.fxml");
     }
-    @FXML
-    //Gustavo ta fazendo, depois adiciona o trocaTela + fxml
+
+    @FXML //Gustavo ta fazendo, depois adiciona o trocaTela + fxml
     private void irParaEstadios(MouseEvent e) {
-        SceneController.mudaDeTela( "/designAndScreens/telaEstadios/tela1.0.fxml");
+        SceneController.mudaDeTela("/designAndScreens/telaEstadios/tela1.fxml");
     }
-    @FXML
-    //Helena ta fazendo, depois adiciona o trocaTela + fxml
+
+    @FXML //Helena ta fazendo, depois adiciona o trocaTela + fxml
     private void irParaLogin(ActionEvent e) {
-        SceneController.mudaDeTela( "/designAndScreens/login/login.fxml");
+        SceneController.mudaDeTela("/designAndScreens/login/login.fxml");
     }
-    @FXML
-    private void avancar(ActionEvent e) {
-        //A pagina(flag) tem que ficar dentro das posições de memória do vetor,logo não poderá ultrapassar seu tamanho-1
-        if (pagina < listaFxml.length - 1) {
-            pagina++;
-            SceneController.mudaDeTela(listaFxml[pagina]);
+
+    private void carregaSelecao() {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("/database/SelecoesNaCopa.txt"));
+            String linha;
+            while ((linha = br.readLine()) != null) {
+                String[] partes = linha.split(";");
+                Selecao s = new Selecao(partes[0], partes[1], partes[2], partes[3], partes[4]);
+                ListSelecoes.add(s);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+
     @FXML
-    private void voltar(ActionEvent e){
-        //A pagina só pode voltar(ser subtraida) apenas se ela for maior do que 0, se não podemos tentar acessar a posição -1, a qual não existe
-        if (pagina > 0) {
-            pagina--;
-            SceneController.mudaDeTela(listaFxml[pagina]);
+    private VBox listaSelecoes;
+
+    private HBox criarLinha(Selecao selecao) {
+        HBox linha = new HBox();
+        linha.setAlignment(Pos.CENTER_LEFT);
+        linha.setSpacing(40);
+        linha.setPrefHeight(80);
+        linha.setStyle(""" 
+                -fx-background-color: white; 
+                -fx-border-color: #EEEEEE; 
+                -fx-padding: 10 20 10 20;
+                """);
+        //Tem que ver como faz o upload de imagem, mas deixa para depois
+        ImageView logoSelecao = new ImageView();
+        logoSelecao.setFitWidth(45);
+        logoSelecao.setFitHeight(45);
+        //Pegando os dados da seleção
+        // Nome
+        Label nome = new Label(selecao.getNome());
+        nome.setStyle(""" 
+                -fx-font-size: 25; 
+                -fx-text-fill: black;
+                -fx-font-family: 'Inter 18pt Medium';""");
+        nome.setPrefWidth(250);
+        //Grupo
+        Label grupo = new Label("Grupo " + selecao.getGrupo());
+        grupo.setStyle(""" 
+                -fx-font-size: 25; 
+                -fx-text-fill: black;
+                -fx-font-family: 'Inter 18pt Medium';""");
+        grupo.setPrefWidth(120);
+        //Ranking
+        Label ranking = new Label(selecao.getRanking());
+        ranking.setStyle(""" 
+                -fx-font-size: 25; 
+                -fx-text-fill: black;
+                -fx-font-family: 'Inter 18pt Medium';""");
+        ranking.setPrefWidth(50);
+        //Participações
+        Label participacao = new Label(selecao.getParticipacao());
+        participacao.setStyle(""" 
+                -fx-font-size: 25; 
+                -fx-text-fill: black;
+                -fx-font-family: 'Inter 18pt Medium';""");
+        participacao.setPrefWidth(50);
+        //Títulos
+        Label titulos = new Label(selecao.getTitulo());
+        titulos.setStyle(""" 
+                -fx-font-size: 25; 
+                -fx-text-fill: black;
+                -fx-font-family: 'Inter 18pt Medium';""");
+        titulos.setPrefWidth(50);
+        //Colocando todas as labeis na linha
+        linha.getChildren().addAll(logoSelecao, nome, grupo, ranking, participacao, titulos);
+        return linha;
+    }
+
+    private void mostraSelecao() {
+        for (Selecao s : ListSelecoes) {
+            HBox linha = criarLinha(s);
+            listaSelecoes.getChildren().add(linha);
         }
     }
 }
