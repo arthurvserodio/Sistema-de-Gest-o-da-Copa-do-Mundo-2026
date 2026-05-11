@@ -1,4 +1,4 @@
-package stadiumAndRefereeing;
+package stadium;
 
 
 public class Estadio {
