@@ -9,21 +9,30 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import nationsAndPlayers.Selecoes;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ControllerEquipes {
-    private List<Selecao> ListSelecoes = new ArrayList<>();
+    private List<Selecoes> ListSelecoes = new ArrayList<>();
+    @FXML
+    private VBox listaSelecoes;
 
     @FXML
     public void initialize() {
+        System.out.println(listaSelecoes);
         carregaSelecao();
         mostraSelecao();
     }
@@ -60,11 +69,11 @@ public class ControllerEquipes {
 
     private void carregaSelecao() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("/database/SelecoesNaCopa.txt"));
+            BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/database/SelecoesNaCopa.txt")));
             String linha;
             while ((linha = br.readLine()) != null) {
                 String[] partes = linha.split(";");
-                Selecao s = new Selecao(partes[0], partes[1], partes[2], partes[3], partes[4]);
+                Selecoes s = new Selecoes(partes[0], partes[1], partes[2], partes[3], partes[4]);
                 ListSelecoes.add(s);
             }
         } catch (Exception e) {
@@ -72,10 +81,7 @@ public class ControllerEquipes {
         }
     }
 
-    @FXML
-    private VBox listaSelecoes;
-
-    private HBox criarLinha(Selecao selecao) {
+    private HBox criarLinha(Selecoes selecao) {
         HBox linha = new HBox();
         linha.setAlignment(Pos.CENTER_LEFT);
         linha.setSpacing(40);
@@ -86,42 +92,53 @@ public class ControllerEquipes {
                 -fx-padding: 10 20 10 20;
                 """);
         //Tem que ver como faz o upload de imagem, mas deixa para depois
-        ImageView logoSelecao = new ImageView();
-        logoSelecao.setFitWidth(45);
-        logoSelecao.setFitHeight(45);
+        String caminhoImagem = "/images/" + selecao.getNome().toLowerCase().replace(" ", "_") + ".png";
+        InputStream is = getClass().getResourceAsStream(caminhoImagem);
+        ImageView logoSelecao;
+        if(is != null){
+            Image imagem=new Image(is);
+            logoSelecao = new ImageView(imagem);
+        }
+        else {
+            Image imagemPadrao = new Image(getClass().getResourceAsStream("/images/brasil.png"));
+            logoSelecao = new ImageView(imagemPadrao);
+        }
+        logoSelecao.setPreserveRatio(true);
+        logoSelecao.setFitWidth(55);
+        logoSelecao.setFitHeight(55);
         //Pegando os dados da seleção
         // Nome
         Label nome = new Label(selecao.getNome());
         nome.setStyle(""" 
-                -fx-font-size: 25; 
+                -fx-font-size: 20; 
                 -fx-text-fill: black;
                 -fx-font-family: 'Inter 18pt Medium';""");
-        nome.setPrefWidth(250);
+        nome.setPrefWidth(252);
         //Grupo
         Label grupo = new Label("Grupo " + selecao.getGrupo());
         grupo.setStyle(""" 
-                -fx-font-size: 25; 
+                -fx-font-size: 13; 
                 -fx-text-fill: black;
                 -fx-font-family: 'Inter 18pt Medium';""");
-        grupo.setPrefWidth(120);
+        grupo.setPrefWidth(90);
         //Ranking
         Label ranking = new Label(selecao.getRanking());
         ranking.setStyle(""" 
-                -fx-font-size: 25; 
+                -fx-font-size: 11; 
                 -fx-text-fill: black;
                 -fx-font-family: 'Inter 18pt Medium';""");
-        ranking.setPrefWidth(50);
+        ranking.setPrefWidth(70);
         //Participações
         Label participacao = new Label(selecao.getParticipacao());
         participacao.setStyle(""" 
-                -fx-font-size: 25; 
+                -fx-font-size: 11; 
                 -fx-text-fill: black;
                 -fx-font-family: 'Inter 18pt Medium';""");
-        participacao.setPrefWidth(50);
+        participacao.setPrefWidth(95);
         //Títulos
         Label titulos = new Label(selecao.getTitulo());
         titulos.setStyle(""" 
-                -fx-font-size: 25; 
+                -fx-font-size: 11; 
                 -fx-text-fill: black;
                 -fx-font-family: 'Inter 18pt Medium';""");
         titulos.setPrefWidth(50);
@@ -131,7 +148,7 @@ public class ControllerEquipes {
     }
 
     private void mostraSelecao() {
-        for (Selecao s : ListSelecoes) {
+        for (Selecoes s : ListSelecoes) {
             HBox linha = criarLinha(s);
             listaSelecoes.getChildren().add(linha);
         }
