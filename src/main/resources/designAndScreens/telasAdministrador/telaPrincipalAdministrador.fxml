@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -8,16 +9,12 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.Group?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="controller.ControllerTelaPrincipalAdministrador"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerTelaPrincipalAdministrador">
     <children>
         <Group>
             <children>
-                <ImageView fitHeight="810.0" fitWidth="1440.0" pickOnBounds="true">
+                <ImageView fitHeight="810.0" fitWidth="1710.0" pickOnBounds="true">
                     <image>
                         <Image url="@../../images/ChatGPT%20Image%2020%20de%20abr.%20de%202026,%2007_50_05.png" />
                     </image>
@@ -62,6 +59,11 @@
                         <Font name="Oswald Medium" size="12.0" />
                     </font>
                 </Button>
+            <Text fill="WHITE" layoutX="1107.0" layoutY="63.0" onMouseClicked="#irParaArbitros" strokeType="OUTSIDE" strokeWidth="0.0" text="Árbitros" textAlignment="CENTER">
+               <font>
+                  <Font name="Oswald Medium" size="30.0" />
+               </font>
+            </Text>
             </children>
         </Group>
 

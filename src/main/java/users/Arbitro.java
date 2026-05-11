@@ -5,6 +5,12 @@ public class Arbitro {
     private String nacionalidade;
     private int experiencia;
 
+    public Arbitro(String nome, String nacionalidade, int experiencia) {
+        this.nome = nome;
+        this.nacionalidade = nacionalidade;
+        this.experiencia = experiencia;
+    }
+
     public String getNome() {
         return nome;
     }

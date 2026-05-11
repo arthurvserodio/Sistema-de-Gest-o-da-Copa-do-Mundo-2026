@@ -5,7 +5,8 @@ import Enums.StatusPartida;
 import nationsAndPlayers.Jogadores;
 import nationsAndPlayers.Selecoes;
 import nationsAndPlayers.Tecnico;
-import stadiumAndRefereeing.Estadio;
+
+import stadium.Estadio;
 import users.Arbitro;
 
 import java.time.LocalDateTime;

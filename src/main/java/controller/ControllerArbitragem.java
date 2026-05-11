@@ -12,16 +12,32 @@ import javafx.scene.layout.AnchorPane;
 import users.Arbitro;
 
 public class ControllerArbitragem {
-    @FXML
-    private AnchorPane painelPrincipal;
-    @FXML private TableView<Arbitro> tabelaArbitros;
+    @FXML private AnchorPane painelPrincipal;
+    @FXML private TableView<Arbitro> tabela;
     @FXML private TableColumn<Arbitro, String> colNome;
     @FXML private TableColumn<Arbitro, String> colNacionalidade;
     @FXML private TableColumn<Arbitro, Integer> colExperiencia;
+    public void initialize() {
+
+        colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+        colNacionalidade.setCellValueFactory(new PropertyValueFactory<>("nacionalidade"));
+        colExperiencia.setCellValueFactory(new PropertyValueFactory<>("experiencia"));
+
+        ObservableList<Arbitro> lista = FXCollections.observableArrayList(
+                new Arbitro("Daronco","brasileiro",4)
+        );
+
+        tabela.setItems(lista);
+
+        painelPrincipal.setOnMouseClicked(event -> {
+            tabela.getSelectionModel().clearSelection();
+        });
+
+    }
 
 
 
-    @FXML
+        @FXML
     private void irParaTela1(ActionEvent e) {
         SceneController.mudaDeTela( "/designAndScreens/telaEstadios/tela1.fxml");
     }
@@ -58,5 +74,13 @@ public class ControllerArbitragem {
     //Passa para tela de história
     private void irParaHistoria(MouseEvent e){
         SceneController.mudaDeTela("/designAndScreens/telaInicial/historia.fxml");
+    }
+    @FXML
+    private void irParaUsuarios(MouseEvent e){
+        SceneController.mudaDeTela( "/designAndScreens/telasAdministrador/usuarios.fxml");
+    }
+    @FXML
+
+    private void irParaEstadios(MouseEvent e) { SceneController.mudaDeTela( "/designAndScreens/telaEstadios/tela1.0.fxml");
     }
 }

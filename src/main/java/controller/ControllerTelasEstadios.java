@@ -27,12 +27,12 @@ public class ControllerTelasEstadios {
 
         //teste:
         ObservableList<Estadio> lista = FXCollections.observableArrayList(
-                new Estadio("Maracanã", "78.838", "Rio de Janeiro"),
-                new Estadio("Lusail Stadium", "88.966", "Catar"),
-                new Estadio("Azteca", "87.523", "México")
+                new Estadio("Maracanã", 78838, "Rio de Janeiro"),
+                new Estadio("Lusail Stadium", 88966, "Catar"),
+                new Estadio("Azteca", 87523, "México")
         );
         for (int i = 1; i <= 50; i++) {
-            lista.add(new Estadio("Estádio " + i, "50.000", "Cidade " + i));
+            lista.add(new Estadio("Estádio " + i, 50000, "Cidade " + i));
         }
 
 
