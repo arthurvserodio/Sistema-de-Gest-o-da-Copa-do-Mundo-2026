@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerEquipes">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="810.0" prefWidth="1440.0" styleClass="gray" stylesheets="@../../css/style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerEquipesCopa">
    <children>
       <Group>
          <children>
@@ -50,216 +55,75 @@
                   <Font name="Oswald Medium" size="12.0" />
                </font>
             </Button>
-            <Line endX="51.0" endY="-7.62939453125E-6" layoutX="473.0" layoutY="75.0" startX="-32.111114501953125" startY="-7.62939453125E-6" stroke="WHITE" />
+            <Line endX="51.0" endY="-7.62939453125E-6" layoutX="472.0" layoutY="75.0" startX="-32.111114501953125" startY="-7.62939453125E-6" stroke="WHITE" />
          </children>
       </Group>
-      <Text layoutX="91.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Países-Sede">
+      <Text layoutX="91.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Países Classificados">
          <font>
-            <Font name="Inter 18pt Medium" size="60.0" />
+            <Font name="Inter 18pt Medium" size="40.0" />
          </font>
       </Text>
-      <Group layoutX="91.0" layoutY="398.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d7d7d7" height="160.0" layoutY="160.0" stroke="TRANSPARENT" strokeType="INSIDE" width="300.0" />
-            <ImageView fitHeight="160.0" fitWidth="300.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../images/american-flag-with-folds-creases.jpg" />
-               </image>
-            </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="160.0" opacity="0.21" stroke="TRANSPARENT" strokeType="INSIDE" width="300.0" />
-            <ImageView fitHeight="46.0" fitWidth="38.0" layoutX="11.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/Crest_of_the_United_States_Soccer_Federation.png" />
-               </image>
-            </ImageView>
-            <Text fill="WHITE" layoutX="51.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estados Unidos">
-               <font>
-                  <Font name="Oswald Medium" size="20.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="11.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="País-sede" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Medium" size="9.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fase" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="215.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Ranking Mundial" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="245.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Participações" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Títulos" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="234.0" layoutY="188.40625" strokeType="OUTSIDE" strokeWidth="0.0" text="Grupo D">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-            <Text layoutX="253.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="16" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-            <Text layoutX="254.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-            <Text layoutX="255.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-         </children>
-      </Group>
-      <Group layoutX="491.0" layoutY="398.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d7d7d7" height="160.0" layoutY="160.0" stroke="TRANSPARENT" strokeType="INSIDE" width="300.0" />
-            <ImageView fitHeight="160.0" fitWidth="300.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../images/flag-mexico.jpg" />
-               </image>
-            </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="160.0" opacity="0.21" stroke="TRANSPARENT" strokeType="INSIDE" width="300.0" />
-            <ImageView fitHeight="46.0" fitWidth="38.0" layoutX="11.0" layoutY="96.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/Mexico_national_football_team_crest_(2022).png" />
-               </image>
-            </ImageView>
-            <Text fill="WHITE" layoutX="51.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="México">
-               <font>
-                  <Font name="Oswald Medium" size="20.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="11.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="País-sede" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Medium" size="9.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fase" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="215.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Ranking Mundial" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="245.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Participações" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Títulos" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="234.0" layoutY="188.40625" strokeType="OUTSIDE" strokeWidth="0.0" text="Grupo A">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-            <Text layoutX="253.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="15" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-            <Text layoutX="254.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="17">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-            <Text layoutX="255.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-         </children>
-      </Group>
-      <Group layoutX="891.0" layoutY="398.0">
-         <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d7d7d7" height="160.0" layoutY="160.0" stroke="TRANSPARENT" strokeType="INSIDE" width="300.0" />
-            <ImageView fitHeight="160.0" fitWidth="300.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../../images/flag-canada.jpg" />
-               </image>
-            </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="160.0" opacity="0.21" stroke="TRANSPARENT" strokeType="INSIDE" width="300.0" />
-            <ImageView fitHeight="46.0" fitWidth="38.0" layoutX="11.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../images/Logotipo_Seleção_Canadá.png" />
-               </image>
-            </ImageView>
-            <Text fill="WHITE" layoutX="51.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Canadá">
-               <font>
-                  <Font name="Oswald Medium" size="20.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="11.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="País-sede" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Medium" size="9.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fase" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="215.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Ranking Mundial" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="245.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Participações" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text fill="#847e7e" layoutX="15.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Títulos" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="16.0" />
-               </font>
-            </Text>
-            <Text layoutX="234.0" layoutY="188.40625" strokeType="OUTSIDE" strokeWidth="0.0" text="Grupo B">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-            <Text layoutX="253.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="30" textAlignment="CENTER">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-            <Text layoutX="254.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-            <Text layoutX="255.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-               <font>
-                  <Font name="Inter 18pt Regular" size="13.0" />
-               </font>
-            </Text>
-         </children>
-      </Group>
-      <Button layoutX="1255.0" layoutY="740.0" mnemonicParsing="false" onAction="#avancar" styleClass="black_button" stylesheets="@../../css/style.css" text="Avançar">
+      <Text fill="#9a9a9a" layoutX="91.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Todas as seleções presentes na atual Copa do Mundo">
          <font>
-            <Font name="Oswald Medium" size="12.0" />
+            <Font name="Inter 18pt Regular" size="19.0" />
          </font>
-      </Button>
+      </Text>
+      <Line endX="91.77777099609375" layoutX="114.0" layoutY="298.0" startX="-18.888885498046875" stroke="#c7a914" />
+      <ImageView fitHeight="771.0" fitWidth="412.0" layoutX="1028.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/ChatGPT%20Image%209%20de%20mai.%20de%202026,%2015_57_59.png" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="91.0" layoutY="318.0" prefHeight="470.0" prefWidth="950.0" stylesheets="@../../css/style.css">
+         <styleClass>
+            <String fx:value="white" />
+            <String fx:value="card-group_stage" />
+         </styleClass>
+         <children>
+            <AnchorPane layoutX="21.0" layoutY="61.0" prefHeight="50.0" prefWidth="903.0" styleClass="NavBarEquipes" stylesheets="@../../css/style.css">
+               <children>
+                  <Label layoutX="50.0" layoutY="19.0" text="SELEÇÃO" textAlignment="CENTER" textFill="#918f8f">
+                     <font>
+                        <Font name="Roboto Condensed Medium" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="400.0" layoutY="19.0" text="GRUPO" textAlignment="CENTER" textFill="#918f8f">
+                     <font>
+                        <Font name="Roboto Condensed Medium" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="500.0" layoutY="19.0" text="RANKING" textAlignment="CENTER" textFill="#918f8f">
+                     <font>
+                        <Font name="Roboto Condensed Medium" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="600.0" layoutY="19.0" text="PARTICIPAÇÕES" textAlignment="CENTER" textFill="#918f8f">
+                     <font>
+                        <Font name="Roboto Condensed Medium" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="750.0" layoutY="19.0" text="TÍTULOS" textAlignment="CENTER" textFill="#918f8f">
+                     <font>
+                        <Font name="Roboto Condensed Medium" size="13.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+            <TextField layoutX="20.0" layoutY="15.0" prefHeight="33.0" prefWidth="339.0" promptText="Pesquisar Seleção..." styleClass="textfield_equipes" stylesheets="@../../css/style.css" />
+            <ImageView fitHeight="55.0" fitWidth="82.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/ChatGPT%20Image%209%20de%20mai.%20de%202026,%2018_28_43.png" />
+               </image>
+            </ImageView>
+            <ScrollPane layoutX="20.0" layoutY="109.0" prefHeight="350.0" prefWidth="906.0" styleClass="scrol_panel" stylesheets="@../../css/style.css">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="889.0" styleClass="list_equipes" stylesheets="@../../css/style.css">
+                     <children>
+                        <VBox fx:id="listaSelecoes" prefHeight="200.0" prefWidth="889.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
