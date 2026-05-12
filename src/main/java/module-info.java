@@ -11,4 +11,5 @@ module com.tp1.sistemacopa2026 {
     opens main to javafx.graphics;
 
     exports main;
+    opens Enums to javafx.base, javafx.fxml;
 }

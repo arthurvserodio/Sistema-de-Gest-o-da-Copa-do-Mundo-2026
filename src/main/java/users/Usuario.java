@@ -1,16 +1,22 @@
 package users;
 
+import Enums.Funcao;
+
 public class Usuario {
     private String nome;
     private Funcao funcao;
     private String pais;
+    private String status;
     private String senha;
 
-    //colocando o construtor para teste, na realidade os usuarios serao instanciados pelas classes especificas
-    public Usuario(String nome, String funcao, String pais, String senha) {
+    public Usuario(){}
+
+
+    public Usuario(String nome, String funcao, String pais, String status, String senha) {
         this.nome = nome;
         this.funcao = Funcao.valueOf(funcao);
         this.pais = pais;
+        this.status = status;
         this.senha = senha;
     }
 
@@ -38,6 +44,13 @@ public class Usuario {
         this.pais = pais;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public void setSenha(String senha) {
         this.senha = senha;

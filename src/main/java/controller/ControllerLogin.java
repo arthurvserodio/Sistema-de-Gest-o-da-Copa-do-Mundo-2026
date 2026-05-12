@@ -12,6 +12,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import users.Administrador;
 
 import java.io.*;
 
@@ -86,7 +87,7 @@ public class ControllerLogin {
             String funcao="ARBITRO";
             while ((linha = reader.readLine()) != null) {
                 String[] colunas = linha.split(",");
-                if(usuario.equals(colunas[0]) && senha.equals(colunas[3])){
+                if(usuario.equals(colunas[0]) && senha.equals(colunas[4])){
                     find=true;
                     funcao=colunas[1];
                     break;
@@ -94,7 +95,9 @@ public class ControllerLogin {
             }
             if(find){
                 mostrarSucesso("Login realizado com sucesso!");
+
                 if(funcao.equals("ADMINISTRADOR")){
+
                     SceneController.mudaDeTela( "/designAndScreens/telasAdministrador/telaPrincipalAdministrador.fxml");
                 }
                 else{

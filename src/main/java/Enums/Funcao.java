@@ -1,4 +1,4 @@
-package users;
+package Enums;
 
 public enum Funcao {
     ADMINISTRADOR,
