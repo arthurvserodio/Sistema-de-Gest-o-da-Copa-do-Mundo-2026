@@ -1,7 +1,7 @@
 package matches;
 
 import Enums.TipoEvento;
-import nationsAndPlayers.Jogadores;
+import nationsAndPlayers.players.Jogadores;
 
 public class EventosOcorridos {
     private int minuto;

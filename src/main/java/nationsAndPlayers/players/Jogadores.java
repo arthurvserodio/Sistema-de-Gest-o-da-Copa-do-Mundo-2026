@@ -1,0 +1,69 @@
+package nationsAndPlayers.players;
+
+import nationsAndPlayers.nations.Selecoes;
+
+public class Jogadores {
+    private String nome;
+    private int capacidade;
+    private int idade;
+    private Selecoes selecao;
+    private boolean lesionado;
+    private boolean suspenso;
+
+    public Jogadores(String nome, int capacidade, int idade, Selecoes selecao, boolean lesionado, boolean suspenso) {
+        this.nome = nome;
+        this.capacidade = capacidade;
+        this.idade = idade;
+        this.selecao = selecao;
+        this.lesionado = lesionado;
+        this.suspenso = suspenso;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getCapacidade() {
+        return capacidade;
+    }
+
+    public void setCapacidade(int capacidade) {
+        this.capacidade = capacidade;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public Selecoes getSelecao() {
+        return selecao;
+    }
+
+    public void setSelecao(Selecoes selecao) {
+        this.selecao = selecao;
+    }
+
+    public boolean isLesionado() {
+        return lesionado;
+    }
+
+    public void setLesionado(boolean lesionado) {
+        this.lesionado = lesionado;
+    }
+
+    public boolean isSuspenso() {
+        return suspenso;
+    }
+
+    public void setSuspenso(boolean suspenso) {
+        this.suspenso = suspenso;
+    }
+}

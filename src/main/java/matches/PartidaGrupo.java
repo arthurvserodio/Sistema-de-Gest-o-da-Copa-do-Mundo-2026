@@ -2,9 +2,9 @@ package matches;
 
 import Enums.Fase;
 import Enums.StatusPartida;
-import nationsAndPlayers.Jogadores;
-import nationsAndPlayers.Selecoes;
-import nationsAndPlayers.Tecnico;
+import nationsAndPlayers.players.Jogadores;
+import nationsAndPlayers.nations.Selecoes;
+import nationsAndPlayers.players.Tecnico;
 import stadium.Estadio;
 import users.Arbitro;
 

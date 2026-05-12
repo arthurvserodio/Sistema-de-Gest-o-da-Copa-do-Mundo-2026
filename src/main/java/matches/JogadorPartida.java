@@ -1,6 +1,6 @@
 package matches;
 
-import nationsAndPlayers.Jogadores;
+import nationsAndPlayers.players.Jogadores;
 
 public class JogadorPartida {
     private Jogadores jogador;

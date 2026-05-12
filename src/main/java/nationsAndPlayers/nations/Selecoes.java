@@ -1,4 +1,4 @@
-package nationsAndPlayers;
+package nationsAndPlayers.nations;
 
 public class Selecoes {
     private String nome;

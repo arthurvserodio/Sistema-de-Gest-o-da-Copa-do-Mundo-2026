@@ -1,6 +1,6 @@
 package matches;
 
-import nationsAndPlayers.Selecoes;
+import nationsAndPlayers.nations.Selecoes;
 
 import java.util.ArrayList;
 
