@@ -20,6 +20,11 @@ public class Usuario {
         this.senha = senha;
     }
 
+    public Usuario(String nome, String pais) {
+        this.nome = nome;
+        this.pais = pais;
+    }
+
     public String getNome() {
         return nome;
     }

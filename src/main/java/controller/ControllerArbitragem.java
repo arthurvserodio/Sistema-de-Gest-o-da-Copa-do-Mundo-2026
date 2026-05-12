@@ -10,6 +10,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import users.Arbitro;
+import users.Usuario;
+
 
 public class ControllerArbitragem {
     @FXML private AnchorPane painelPrincipal;
@@ -20,11 +22,11 @@ public class ControllerArbitragem {
     public void initialize() {
 
         colNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        colNacionalidade.setCellValueFactory(new PropertyValueFactory<>("nacionalidade"));
+        colNacionalidade.setCellValueFactory(new PropertyValueFactory<>("pais"));
         colExperiencia.setCellValueFactory(new PropertyValueFactory<>("experiencia"));
 
         ObservableList<Arbitro> lista = FXCollections.observableArrayList(
-                new Arbitro("Daronco","brasileiro",4)
+                new Arbitro("Daronco","Brasil",4)
         );
 
         tabela.setItems(lista);

@@ -6,7 +6,7 @@ import nationsAndPlayers.players.Jogadores;
 import nationsAndPlayers.nations.Selecoes;
 import nationsAndPlayers.players.Tecnico;
 
-import stadium.Estadio;
+import stadiumAndRefeering.Estadio;
 import users.Arbitro;
 
 import java.time.LocalDateTime;

@@ -1,30 +1,11 @@
 package users;
 
-public class Arbitro {
-    private String nome;
-    private String nacionalidade;
+public class Arbitro extends Usuario {
     private int experiencia;
 
-    public Arbitro(String nome, String nacionalidade, int experiencia) {
-        this.nome = nome;
-        this.nacionalidade = nacionalidade;
+    public Arbitro(String nome,String pais, int experiencia) {
+        super(nome, pais);
         this.experiencia = experiencia;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getNacionalidade() {
-        return nacionalidade;
-    }
-
-    public void setNacionalidade(String nacionalidade) {
-        this.nacionalidade = nacionalidade;
     }
 
     public int getExperiencia() {

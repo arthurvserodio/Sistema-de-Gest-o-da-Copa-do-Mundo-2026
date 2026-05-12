@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import stadium.Estadio;
+import stadiumAndRefeering.Estadio;
 
 public class ControllerTelasEstadios {
     @FXML private AnchorPane painelPrincipal;
