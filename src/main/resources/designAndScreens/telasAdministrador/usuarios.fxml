@@ -56,7 +56,7 @@
                     <columns>
                         <TableColumn fx:id="colNome" prefWidth="75.0" text="Nome" />
                         <TableColumn fx:id="colFuncao" prefWidth="75.0" text="Função" />
-                        <TableColumn fx:id="colPais" prefWidth="75.0" text="País" />
+                        <TableColumn fx:id="colPais" prefWidth="75.0" text="Nacionalidade" />
                         <TableColumn fx:id="colStatus" prefWidth="75.0" text="Status" />
                     </columns>
                     <columnResizePolicy>
