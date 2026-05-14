@@ -2,16 +2,21 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import nationsAndPlayers.nations.Selecoes;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -80,8 +85,8 @@ public class ControllerEquipes {
         linha.setSpacing(40);
         linha.setPrefHeight(80);
         linha.setStyle(""" 
-                -fx-background-color: white; 
-                -fx-border-color: #EEEEEE; 
+                -fx-background-color: white;
+                -fx-border-color: #EEEEEE;
                 -fx-padding: 10 20 10 20;
                 """);
         //Tem que ver como faz o upload de imagem, mas deixa para depois
@@ -91,6 +96,19 @@ public class ControllerEquipes {
         if(is != null){
             Image imagem=new Image(is);
             logoSelecao = new ImageView(imagem);
+            logoSelecao.setOnMouseClicked(event ->{
+                try{
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/designAndScreens/telaJogadores/jogadores.fxml"));
+                    Parent tela = loader.load();
+                    ControllerJogadores controller = loader.getController();
+                    controller.setSelecoes(selecao);
+                    ImageView source = (ImageView) event.getSource();
+                    Stage stage = (Stage) source.getScene().getWindow();
+                    stage.setScene(new Scene(tela));
+                } catch(IOException e){
+                    e.printStackTrace();
+                }
+            });
         }
         else {
             Image imagemPadrao = new Image(getClass().getResourceAsStream("/images/brasil.png"));
@@ -103,7 +121,7 @@ public class ControllerEquipes {
         // Nome
         Label nome = new Label(selecao.getNome());
         nome.setStyle(""" 
-                -fx-font-size: 20; 
+                -fx-font-size: 20;
                 -fx-text-fill: black;
                 -fx-font-family: 'Inter 18pt Medium';""");
         nome.setPrefWidth(252);
